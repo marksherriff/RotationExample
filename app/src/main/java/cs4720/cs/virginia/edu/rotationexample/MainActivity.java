@@ -2,6 +2,7 @@ package cs4720.cs.virginia.edu.rotationexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current state
+        Log.d("RotationExample", "Rotating!");
         savedInstanceState.putInt("score", value);
 
         super.onSaveInstanceState(savedInstanceState);
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         // Always call the superclass so it can restore the view hierarchy
+        Log.d("RotationExample", "Rebuilding the View!");
         super.onRestoreInstanceState(savedInstanceState);
 
         // Restore state members from saved instance
